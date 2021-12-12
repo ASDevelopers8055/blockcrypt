@@ -2,6 +2,7 @@
 name = "blockcrypt"
 version = "0.1.0"
 license = "MIT"
+repository = "https://github.com/ASDevelopers8055/blockcrypt"
 description = "A library to make a basic blockchain."
 authors = ["Rustacean <asdevelopers8055@gmail.com>"]
 edition = "2021"
