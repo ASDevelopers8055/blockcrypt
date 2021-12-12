@@ -1,5 +1,5 @@
 use super::*;
-
+use std::fmt::{self, Debug, Formatter};
 /// Checks whether the hash is greater than the target. If true, the hash given as parameter is valid.
 pub fn difficulty (hash: &Vec<u8>, difficulty: u128) -> bool {
     difficulty > difficulty_bytes_as_u128(&hash)
@@ -40,6 +40,18 @@ impl Block {
                 return;
             }
         }
+    }
+}
+
+impl Debug for Block {
+    fn fmt (&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "Block[{}]: {} at: {} with: {} nonce: {}",
+            &self.index,
+            &hex::encode(&self.hash),
+            &self.timestamp,
+            &self.transactions.len(),
+            &self.nonce,
+        )
     }
 }
 
